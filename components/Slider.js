@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import product from 'data/product'
 import useSlider from 'hooks/useSlider'
+import { NextIcon, PrevIcon } from './Icons'
 
 export default function Slider() {
   const [viewportRef, scroll] = useSlider({
@@ -29,14 +30,14 @@ export default function Slider() {
         className='slider__button prev'
         onClick={() => scroll('prev')}
       >
-        <Image src='/images/icon-previous.svg' width={13} height={18} alt='Prev icon' />
+        <PrevIcon />
       </button>
       <button
         aria-label='Next image'
         className='slider__button next'
         onClick={() => scroll('next')}
       >
-        <Image src='/images/icon-next.svg' width={13} height={18} alt='Next icon' />
+        <NextIcon />
       </button>
     </div>
   )

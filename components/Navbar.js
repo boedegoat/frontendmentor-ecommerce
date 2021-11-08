@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import useToggle from 'hooks/useToggle'
+import { CartIcon, HamburgerIcon, SneakersLogo, XIcon } from './Icons'
 
 export default function Navbar() {
   const [openMobileMenu, toggleOpenMobileMenu] = useToggle()
@@ -15,18 +16,13 @@ export default function Navbar() {
             className='center-child translate-y-[2px] lg:hidden mr-4'
             onClick={toggleOpenMobileMenu}
           >
-            <Image
-              width={16}
-              height={16}
-              src='/images/icon-menu.svg'
-              alt='Mobile menu icon'
-            />
+            <HamburgerIcon />
           </button>
 
           {/* App logo */}
           <Link href='#'>
             <a className='center-child'>
-              <Image width={138} height={20} src='/images/logo.svg' alt='Sneakers logo' />
+              <SneakersLogo />
             </a>
           </Link>
 
@@ -39,12 +35,7 @@ export default function Navbar() {
           <div className='flex ml-auto space-x-5'>
             <Link href='#'>
               <a aria-label='Add to cart' className='relative center-child'>
-                <Image
-                  width={22}
-                  height={22}
-                  src='/images/icon-cart.svg'
-                  alt='Cart icon'
-                />
+                <CartIcon className='text-[#69707D]' />
                 <span className='absolute -top-2 -right-2 text-xs rounded-full bg-app-orange font-bold px-2 text-white'>
                   3
                 </span>
@@ -56,7 +47,7 @@ export default function Navbar() {
                   width={22}
                   height={22}
                   src='/images/image-avatar.png'
-                  alt='Avatar icon'
+                  alt='Avatar image'
                 />
               </a>
             </Link>
@@ -84,7 +75,7 @@ function NavbarLinks(props) {
           className='center-child translate-y-[2px] lg:hidden ml-6 mt-7 mb-12'
           onClick={props.toggleOpenMobileMenu}
         >
-          <Image width={16} height={16} src='/images/icon-close.svg' alt='X icon' />
+          <XIcon />
         </button>
 
         <Link href='#'>
