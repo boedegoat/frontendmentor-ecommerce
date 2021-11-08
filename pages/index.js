@@ -1,5 +1,6 @@
 import Container from 'components/Container'
 import ProductDetails from 'components/ProductDetails'
+import ProductPrice from 'components/ProductPrice'
 import Slider from 'components/Slider'
 
 export default function Home() {
@@ -7,7 +8,7 @@ export default function Home() {
     <Container>
       <Slider />
       <ProductDetails />
-      {/* product price */}
+      <ProductPrice />
       {/* add to cart button */}
     </Container>
   )
