@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import productImages from 'data/productImages'
+import product from 'data/product'
 import useSlider from 'hooks/useSlider'
 
 export default function Slider() {
@@ -12,7 +12,7 @@ export default function Slider() {
     <div className='slider'>
       <div className='slider__viewport' ref={viewportRef}>
         <div className='slider__container'>
-          {productImages.map((productImage, index) => (
+          {product.images.map((productImage, index) => (
             <div className='slider__slide' key={index}>
               <Image
                 width={375}

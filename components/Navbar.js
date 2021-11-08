@@ -6,7 +6,7 @@ export default function Navbar() {
   const [openMobileMenu, toggleOpenMobileMenu] = useToggle()
 
   return (
-    <nav className='sticky top-0 z-40'>
+    <nav className='sticky top-0 z-40 bg-white shadow-sm lg:shadow-none'>
       <div className='wrapper'>
         <div className='lg:border-b flex items-center py-6'>
           {/* Hamburger menu */}
