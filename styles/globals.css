@@ -3,3 +3,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .wrapper {
+    @apply max-w-[1200px] px-6 mx-auto;
+  }
+  .center-child {
+    @apply grid place-items-center;
+  }
+  .navbar__link {
+    @apply font-bold w-full px-6 py-2 text-lg lg:text-base lg:text-center lg:w-max lg:font-normal lg:text-app-blue-300;
+  }
+}

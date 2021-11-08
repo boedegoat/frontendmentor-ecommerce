@@ -1,3 +1,12 @@
+import Container from 'components/Container'
+
 export default function Home() {
-  return <div className='text-5xl text-app-orange'>Samlekom</div>
+  return (
+    <Container>
+      {/* product image slider */}
+      {/* product details */}
+      {/* product price */}
+      {/* add to cart button */}
+    </Container>
+  )
 }
