@@ -4,8 +4,8 @@
 import useEmblaCarousel from 'embla-carousel-react'
 import { useEffect, useState } from 'react'
 
-export default function useSlider(options = undefined) {
-  const [viewportRef, slider] = useEmblaCarousel(options)
+export default function useSlider(options = undefined, plugins = undefined) {
+  const [viewportRef, slider] = useEmblaCarousel(options, plugins)
 
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false)

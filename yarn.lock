@@ -1061,6 +1061,11 @@ elliptic@^6.5.3:
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
 
+embla-carousel-autoplay@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/embla-carousel-autoplay/-/embla-carousel-autoplay-6.0.0.tgz#2cd9de4596b21d1d628c2fa8f65b07452069a0ca"
+  integrity sha512-eRWBnZbaYL4SiNcjvVptOCnxZtaZ0/qa4ug2sMoMJGCoTJRTBzFPxjzk4Ly4lneEUIz7Ka269wb84CU96oHS8A==
+
 embla-carousel-react@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/embla-carousel-react/-/embla-carousel-react-6.0.0.tgz#5944a8f07ded2f6becb2246cad042658ddb955c9"
