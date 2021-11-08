@@ -1,29 +1,21 @@
 import Image from 'next/image'
 import product from 'data/product'
 import useSlider from 'hooks/useSlider'
+import useAutoplay from 'hooks/useAutoplay'
 import { NextIcon, PrevIcon } from './Icons'
 
-import Autoplay from 'embla-carousel-autoplay'
-import { useRef } from 'react'
-
 export default function Slider() {
-  const autoplay = useRef(
-    Autoplay(
-      {
-        delay: 6000,
-        stopOnInteraction: true,
-      },
-      (emblaRoot) => emblaRoot.parentElement
-    )
-  )
+  // enable slider autoplay
+  const autoplay = useAutoplay({
+    delay: 6000,
+    stopOnInteraction: true,
+  })
 
-  const [viewportRef, scroll] = useSlider(
-    {
-      loop: true,
-      skipSnaps: false,
-    },
-    [autoplay.current]
-  )
+  // prettier-ignore
+  const [viewportRef, scroll] = useSlider({ 
+    loop: true, 
+    skipSnaps: false 
+  }, [autoplay])
 
   return (
     <div className='slider'>

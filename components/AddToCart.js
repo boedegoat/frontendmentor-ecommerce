@@ -1,17 +1,13 @@
-import { useState } from 'react'
+import useAppContext from 'hooks/useAppContext'
+import product from 'data/product'
+import useHandleUnit from 'hooks/useHandleUnit'
 import { CartIcon, MinusIcon, PlusIcon } from './Icons'
 
 export default function AddToCart() {
-  const [unit, setUnit] = useState(0)
+  const { cart, addToCart } = useAppContext()
+  const [unit, minUnit, addUnit] = useHandleUnit(0)
 
-  function addUnit() {
-    setUnit((u) => u + 1)
-  }
-
-  function minUnit() {
-    if (unit <= 0) return
-    setUnit((u) => u - 1)
-  }
+  console.log(cart)
 
   return (
     <div className='wrapper pt-2 pb-24'>
@@ -24,7 +20,11 @@ export default function AddToCart() {
           <PlusIcon />
         </button>
       </div>
-      <button className='add-to-cart-button' aria-label='Add to cart'>
+      <button
+        className='add-to-cart-button'
+        aria-label='Add to cart'
+        onClick={() => addToCart(product, unit)}
+      >
         <CartIcon className='mr-2 scale-75' /> Add to cart
       </button>
     </div>
