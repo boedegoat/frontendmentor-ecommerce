@@ -1,3 +1,3 @@
 export default function Home() {
-  return <div className='text-2xl font-bold'>samlekom</div>
+  return <div className='text-5xl text-app-orange'>Samlekom</div>
 }
