@@ -4,14 +4,69 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 @layer components {
   .wrapper {
     @apply max-w-[1200px] px-6 mx-auto;
   }
   .center-child {
-    @apply grid place-items-center;
+    @apply flex justify-center items-center;
   }
   .navbar__link {
     @apply font-bold w-full px-6 py-2 text-lg lg:text-base lg:text-center lg:w-max lg:font-normal lg:text-app-blue-300;
   }
+}
+
+.slider {
+  position: relative;
+}
+
+.slider__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider__viewport.is-draggable {
+  cursor: move;
+  cursor: grab;
+}
+
+.slider__viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.slider__container {
+  display: flex;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slider__slide {
+  position: relative;
+  min-width: 100%;
+}
+
+.slider__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  width: 3rem;
+  height: 3rem;
+  @apply shadow-md center-child rounded-full;
+}
+
+.slider__button.next {
+  right: 1rem;
+}
+.slider__button.prev {
+  left: 1rem;
 }

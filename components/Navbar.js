@@ -6,7 +6,7 @@ export default function Navbar() {
   const [openMobileMenu, toggleOpenMobileMenu] = useToggle()
 
   return (
-    <nav className='sticky top-0'>
+    <nav className='sticky top-0 z-40'>
       <div className='wrapper'>
         <div className='lg:border-b flex items-center py-6'>
           {/* Hamburger menu */}
@@ -30,11 +30,6 @@ export default function Navbar() {
             </a>
           </Link>
 
-          <MobileNavbarOverlay
-            openMobileMenu={openMobileMenu}
-            toggleOpenMobileMenu={toggleOpenMobileMenu}
-          />
-
           <NavbarLinks
             openMobileMenu={openMobileMenu}
             toggleOpenMobileMenu={toggleOpenMobileMenu}
@@ -44,15 +39,15 @@ export default function Navbar() {
           <div className='flex ml-auto space-x-5'>
             <Link href='#'>
               <a aria-label='Add to cart' className='relative center-child'>
-                <span className='absolute -top-2 -right-2 text-xs rounded-full z-10 bg-app-orange font-bold px-2 text-white'>
-                  3
-                </span>
                 <Image
                   width={22}
                   height={22}
                   src='/images/icon-cart.svg'
                   alt='Cart icon'
                 />
+                <span className='absolute -top-2 -right-2 text-xs rounded-full bg-app-orange font-bold px-2 text-white'>
+                  3
+                </span>
               </a>
             </Link>
             <Link href='#'>
@@ -72,10 +67,50 @@ export default function Navbar() {
   )
 }
 
+function NavbarLinks(props) {
+  return (
+    <div className='z-10'>
+      <MobileNavbarOverlay {...props} />
+      <div
+        className={`
+        flex flex-col lg:flex-row items-start bg-white lg:bg-transparent fixed lg:static lg:ml-5 top-0 left-0 w-2/3 h-full
+        transition-transform ease-out
+        ${props.openMobileMenu ? 'translate-x-0' : '-translate-x-full'}
+        lg:transform-none lg:transition-none
+      `}
+      >
+        <button
+          aria-label='Close mobile menu'
+          className='center-child translate-y-[2px] lg:hidden ml-6 mt-7 mb-12'
+          onClick={props.toggleOpenMobileMenu}
+        >
+          <Image width={16} height={16} src='/images/icon-close.svg' alt='X icon' />
+        </button>
+
+        <Link href='#'>
+          <a className='navbar__link'>Collections</a>
+        </Link>
+        <Link href='#'>
+          <a className='navbar__link'>Men</a>
+        </Link>
+        <Link href='#'>
+          <a className='navbar__link'>Women</a>
+        </Link>
+        <Link href='#'>
+          <a className='navbar__link'>About</a>
+        </Link>
+        <Link href='#'>
+          <a className='navbar__link'>Contact</a>
+        </Link>
+      </div>
+    </div>
+  )
+}
+
 function MobileNavbarOverlay(props) {
   return (
     <div
-      className={`z-20 transition-opacity ${
+      className={`transition-opacity ${
         props.openMobileMenu ? 'opacity-100' : 'opacity-0'
       }`}
     >
@@ -87,43 +122,6 @@ function MobileNavbarOverlay(props) {
           onClick={props.toggleOpenMobileMenu}
         />
       )}
-    </div>
-  )
-}
-
-function NavbarLinks(props) {
-  return (
-    <div
-      className={`
-        flex flex-col lg:flex-row items-start bg-white lg:bg-transparent fixed lg:static lg:ml-5 top-0 left-0 w-2/3 h-full
-        transition-transform ease-out z-30
-        ${props.openMobileMenu ? 'translate-x-0' : '-translate-x-full'}
-        lg:transform-none lg:transition-none
-      `}
-    >
-      <button
-        aria-label='Close mobile menu'
-        className='center-child translate-y-[2px] lg:hidden ml-6 mt-7 mb-12'
-        onClick={props.toggleOpenMobileMenu}
-      >
-        <Image width={16} height={16} src='/images/icon-close.svg' alt='X icon' />
-      </button>
-
-      <Link href='#'>
-        <a className='navbar__link'>Collections</a>
-      </Link>
-      <Link href='#'>
-        <a className='navbar__link'>Men</a>
-      </Link>
-      <Link href='#'>
-        <a className='navbar__link'>Women</a>
-      </Link>
-      <Link href='#'>
-        <a className='navbar__link'>About</a>
-      </Link>
-      <Link href='#'>
-        <a className='navbar__link'>Contact</a>
-      </Link>
     </div>
   )
 }
