@@ -22,6 +22,9 @@ module.exports = {
           'black-opacity-75': 'hsl(0, 0%, 0%)',
         },
       },
+      boxShadow: {
+        'glowing-orange': '0 20px 20px -10px hsl(26, 100%, 75%)',
+      },
     },
   },
   variants: {

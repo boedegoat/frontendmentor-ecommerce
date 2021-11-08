@@ -1,3 +1,4 @@
+import AddToCart from 'components/AddToCart'
 import Container from 'components/Container'
 import ProductDetails from 'components/ProductDetails'
 import ProductPrice from 'components/ProductPrice'
@@ -9,7 +10,7 @@ export default function Home() {
       <Slider />
       <ProductDetails />
       <ProductPrice />
-      {/* add to cart button */}
+      <AddToCart />
     </Container>
   )
 }

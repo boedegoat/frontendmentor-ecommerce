@@ -70,3 +70,9 @@
 .slider__button.prev {
   left: 1rem;
 }
+
+.add-to-cart-button {
+  @apply center-child py-4 rounded-md mt-4 bg-app-orange text-white font-bold text-sm tracking-wide shadow-glowing-orange;
+  display: flex;
+  width: 100%;
+}
