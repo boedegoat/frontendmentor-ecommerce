@@ -7,8 +7,6 @@ export default function AddToCart() {
   const { cart, addToCart } = useAppContext()
   const [unit, minUnit, addUnit] = useHandleUnit(0)
 
-  console.log(cart)
-
   return (
     <div className='wrapper pt-2 pb-24'>
       <div className='flex justify-between items-center h-[56px] bg-app-blue-100 rounded-md'>
