@@ -2,9 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import useToggle from 'hooks/useToggle'
 import { CartIcon, HamburgerIcon, SneakersLogo, XIcon } from './Icons'
+import useAppContext from 'hooks/useAppContext'
 
 export default function Navbar() {
   const [openMobileMenu, toggleOpenMobileMenu] = useToggle()
+
+  const { getTotalProductUnitInCart } = useAppContext()
+  const totalProductUnit = getTotalProductUnitInCart() || null
 
   return (
     <nav className='sticky top-0 z-40 bg-white shadow-sm lg:shadow-none'>
@@ -36,9 +40,11 @@ export default function Navbar() {
             <Link href='#'>
               <a aria-label='Add to cart' className='relative center-child'>
                 <CartIcon className='text-[#69707D]' />
-                <span className='absolute -top-2 -right-2 text-xs rounded-full bg-app-orange font-bold px-2 text-white'>
-                  3
-                </span>
+                {totalProductUnit && (
+                  <span className='absolute -top-2 -right-2 text-xs rounded-full bg-app-orange font-bold px-2 text-white'>
+                    {totalProductUnit}
+                  </span>
+                )}
               </a>
             </Link>
             <Link href='#'>

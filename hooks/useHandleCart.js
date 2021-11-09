@@ -53,5 +53,10 @@ export default function useHandleCart() {
     ])
   }
 
-  return [cart, addToCart, updateProductUnit]
+  function getTotalProductUnitInCart() {
+    const totalUnit = cart.reduce((total, product) => total + product.unit, 0)
+    return totalUnit
+  }
+
+  return { cart, addToCart, updateProductUnit, getTotalProductUnitInCart }
 }

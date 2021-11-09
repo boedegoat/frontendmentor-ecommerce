@@ -4,7 +4,7 @@ import useHandleUnit from 'hooks/useHandleUnit'
 import { CartIcon, MinusIcon, PlusIcon } from './Icons'
 
 export default function AddToCart() {
-  const { cart, addToCart } = useAppContext()
+  const { addToCart } = useAppContext()
   const [unit, minUnit, addUnit] = useHandleUnit(0)
 
   return (
