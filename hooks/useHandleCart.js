@@ -45,10 +45,11 @@ export default function useHandleCart() {
       ])
     }
 
-    // if unit is not 0, update product unit
+    // if unit is not 0, update product unit and total
+    const total = updateProduct.price * unit
     setCart((currentProduct) => [
       ...currentProduct.slice(0, index),
-      { ...updateProduct, unit },
+      { ...updateProduct, unit, total },
       ...currentProduct.slice(index + 1),
     ])
   }
