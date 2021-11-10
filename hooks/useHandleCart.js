@@ -3,8 +3,6 @@ import { useState } from 'react'
 export default function useHandleCart() {
   const [cart, setCart] = useState([])
 
-  console.log(cart)
-
   function findProductInCart(product) {
     const productInCart = cart.find(({ name }) => name === product.name)
     return [productInCart, cart.indexOf(productInCart)]
@@ -54,10 +52,18 @@ export default function useHandleCart() {
     ])
   }
 
+  function deleteProduct(product) {
+    const [, index] = findProductInCart(product)
+    setCart((currentProduct) => [
+      ...currentProduct.slice(0, index),
+      ...currentProduct.slice(index + 1),
+    ])
+  }
+
   function getTotalProductUnitInCart() {
     const totalUnit = cart.reduce((total, product) => total + product.unit, 0)
     return totalUnit
   }
 
-  return { cart, addToCart, updateProductUnit, getTotalProductUnitInCart }
+  return { cart, addToCart, updateProductUnit, getTotalProductUnitInCart, deleteProduct }
 }

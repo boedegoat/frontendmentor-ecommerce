@@ -3,9 +3,11 @@ import Image from 'next/image'
 import useToggle from 'hooks/useToggle'
 import { CartIcon, HamburgerIcon, SneakersLogo, XIcon } from './Icons'
 import useAppContext from 'hooks/useAppContext'
+import Cart from './Cart'
 
 export default function Navbar() {
   const [openMobileMenu, toggleOpenMobileMenu] = useToggle()
+  const [openCart, toggleOpenCart] = useToggle()
 
   const { getTotalProductUnitInCart } = useAppContext()
   const totalProductUnit = getTotalProductUnitInCart() || null
@@ -37,16 +39,22 @@ export default function Navbar() {
 
           {/* Navbar right menu */}
           <div className='flex ml-auto space-x-5'>
-            <Link href='#'>
-              <a aria-label='Add to cart' className='relative center-child'>
+            <div className='lg:relative'>
+              <button
+                aria-label='Add to cart'
+                className='relative center-child'
+                onClick={toggleOpenCart}
+              >
                 <CartIcon className='text-[#69707D]' />
                 {totalProductUnit && (
                   <span className='absolute -top-2 -right-2 text-xs rounded-full bg-app-orange font-bold px-2 text-white'>
                     {totalProductUnit}
                   </span>
                 )}
-              </a>
-            </Link>
+              </button>
+              <Cart openCart={openCart} toggleOpenCart={toggleOpenCart} />
+            </div>
+
             <Link href='#'>
               <a aria-label='Profile' className='center-child'>
                 <Image
