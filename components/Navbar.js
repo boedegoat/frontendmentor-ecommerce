@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className='sticky top-0 z-40 bg-white shadow-sm md:shadow-none'>
       <div className='wrapper'>
-        <div className='md:border-b flex items-center py-6'>
+        <div className='md:border-b flex items-center py-6 md:p-0'>
           {/* Hamburger menu */}
           <button
             aria-label='Open mobile menu'
@@ -78,7 +78,7 @@ function NavbarLinks(props) {
       <MobileNavbarOverlay {...props} />
       <div
         className={`
-        flex flex-col md:flex-row items-start bg-white md:bg-transparent fixed md:static md:ml-5 top-0 left-0 w-2/3 h-full
+        flex flex-col md:flex-row items-start bg-white md:bg-transparent fixed md:static md:ml-5 top-0 left-0 w-2/3 md:w-full h-full
         transition-transform ease-out
         ${props.openMobileMenu ? 'translate-x-0' : '-translate-x-full'}
         md:transform-none md:transition-none

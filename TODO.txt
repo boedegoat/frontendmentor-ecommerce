@@ -1,2 +1,3 @@
 [x] Bikin function buat nambahin produk ke keranjang  
 [ ] Bikin desktop version
+    [ ] bikin lightbox nya
