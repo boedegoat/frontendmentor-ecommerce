@@ -11,7 +11,9 @@ export default function Container({ children }) {
         <link rel='icon' type='image/png' href='/images/favicon-32x32.png'></link>
       </Head>
       <Navbar />
-      <main>{children}</main>
+      <main className='md:wrapper flex flex-col flex-grow md:flex-row md:items-center'>
+        {children}
+      </main>
     </>
   )
 }

@@ -1,1 +1,2 @@
-[] Bikin function buat nambahin produk ke keranjang  
+[x] Bikin function buat nambahin produk ke keranjang  
+[ ] Bikin desktop version

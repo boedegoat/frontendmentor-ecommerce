@@ -13,13 +13,13 @@ export default function Navbar() {
   const totalProductUnit = getTotalProductUnitInCart() || null
 
   return (
-    <nav className='sticky top-0 z-40 bg-white shadow-sm lg:shadow-none'>
+    <nav className='sticky top-0 z-40 bg-white shadow-sm md:shadow-none'>
       <div className='wrapper'>
-        <div className='lg:border-b flex items-center py-6'>
+        <div className='md:border-b flex items-center py-6'>
           {/* Hamburger menu */}
           <button
             aria-label='Open mobile menu'
-            className='center-child translate-y-[2px] lg:hidden mr-4'
+            className='center-child translate-y-[2px] md:hidden mr-4'
             onClick={toggleOpenMobileMenu}
           >
             <HamburgerIcon />
@@ -39,7 +39,7 @@ export default function Navbar() {
 
           {/* Navbar right menu */}
           <div className='flex ml-auto space-x-5'>
-            <div className='lg:relative'>
+            <div className='md:relative'>
               <button
                 aria-label='Add to cart'
                 className='relative center-child'
@@ -78,15 +78,15 @@ function NavbarLinks(props) {
       <MobileNavbarOverlay {...props} />
       <div
         className={`
-        flex flex-col lg:flex-row items-start bg-white lg:bg-transparent fixed lg:static lg:ml-5 top-0 left-0 w-2/3 h-full
+        flex flex-col md:flex-row items-start bg-white md:bg-transparent fixed md:static md:ml-5 top-0 left-0 w-2/3 h-full
         transition-transform ease-out
         ${props.openMobileMenu ? 'translate-x-0' : '-translate-x-full'}
-        lg:transform-none lg:transition-none
+        md:transform-none md:transition-none
       `}
       >
         <button
           aria-label='Close mobile menu'
-          className='center-child translate-y-[2px] lg:hidden ml-6 mt-7 mb-12'
+          className='center-child translate-y-[2px] md:hidden ml-6 mt-7 mb-12'
           onClick={props.toggleOpenMobileMenu}
         >
           <XIcon />

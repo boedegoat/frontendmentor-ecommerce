@@ -8,9 +8,11 @@ export default function Home() {
   return (
     <Container>
       <Slider />
-      <ProductDetails />
-      <ProductPrice />
-      <AddToCart />
+      <div>
+        <ProductDetails />
+        <ProductPrice />
+        <AddToCart />
+      </div>
     </Container>
   )
 }

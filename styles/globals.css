@@ -19,8 +19,12 @@
     @apply flex justify-center items-center;
   }
   .navbar__link {
-    @apply font-bold w-full px-6 py-2 text-lg lg:text-base lg:text-center lg:w-max lg:font-normal lg:text-app-blue-300;
+    @apply font-bold w-full px-6 py-2 text-lg md:text-base md:text-center md:w-max md:font-normal md:text-app-blue-300;
   }
+}
+
+#__next {
+  @apply flex flex-col min-h-screen;
 }
 
 .slider {
