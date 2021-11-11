@@ -38,7 +38,7 @@ export default function Navbar() {
           />
 
           {/* Navbar right menu */}
-          <div className='flex ml-auto space-x-5'>
+          <div className='flex items-center ml-auto space-x-5'>
             <div className='md:relative'>
               <button
                 aria-label='Add to cart'
@@ -56,10 +56,13 @@ export default function Navbar() {
             </div>
 
             <Link href='#'>
-              <a aria-label='Profile' className='center-child'>
+              <a
+                aria-label='Profile'
+                className='center-child hover:ring hover:ring-app-orange rounded-full'
+              >
                 <Image
-                  width={22}
-                  height={22}
+                  width={30}
+                  height={30}
                   src='/images/image-avatar.png'
                   alt='Avatar image'
                 />
