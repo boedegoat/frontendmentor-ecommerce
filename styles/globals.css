@@ -29,11 +29,16 @@
 
 .slider {
   position: relative;
+  @apply md:w-1/3;
+}
+
+.lightbox-bg {
+  @apply hidden md:block absolute inset-0 bg-black bg-opacity-75;
 }
 
 .slider__viewport {
   overflow: hidden;
-  width: 100%;
+  @apply w-full;
 }
 
 .slider__viewport.is-draggable {
@@ -69,10 +74,10 @@
 }
 
 .slider__button.next {
-  right: 1rem;
+  @apply right-4 md:-right-6;
 }
 .slider__button.prev {
-  left: 1rem;
+  @apply left-4 md:-left-6;
 }
 
 .add-to-cart-button {

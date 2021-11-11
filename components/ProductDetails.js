@@ -6,8 +6,8 @@ export default function ProductDetails() {
       <p className='uppercase tracking-wider text-app-orange font-bold text-xs'>
         {product.company}
       </p>
-      <h2 className='font-bold text-3xl mt-2'>{product.name}</h2>
-      <p className='text-app-blue-300 mt-4'>{product.description}</p>
+      <h2 className='font-bold text-3xl md:text-5xl mt-2'>{product.name}</h2>
+      <p className='text-app-blue-300 mt-4 md:mt-6'>{product.description}</p>
     </div>
   )
 }
