@@ -9,7 +9,7 @@ export default function AddToCart() {
 
   return (
     <div className='wrapper pt-2 pb-24 md:flex md:items-center md:py-0 md:space-x-2'>
-      <div className='flex justify-between items-center h-[56px] bg-app-blue-100 rounded-md'>
+      <div className='flex justify-between items-center h-[56px] md:min-w-[150px] bg-app-blue-100 rounded-md'>
         <button aria-label='Minus 1 unit' className='h-full px-5' onClick={minUnit}>
           <MinusIcon />
         </button>

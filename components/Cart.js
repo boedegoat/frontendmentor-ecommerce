@@ -10,7 +10,7 @@ export default function Cart({ openCart, toggleOpenCart }) {
 
   return (
     <div
-      className={`absolute top-20 left-0 w-full px-2
+      className={`absolute top-[5.5rem] md:top-14 left-0 md:-translate-x-1/2 w-full md:min-w-[360px] px-2
       transition-all transform origin-top
       ${
         !openCart
@@ -19,7 +19,7 @@ export default function Cart({ openCart, toggleOpenCart }) {
       }
     `}
     >
-      <div className='bg-white divide-y rounded-md shadow-lg flex flex-col'>
+      <div className='bg-white divide-y rounded-md shadow-lg md:shadow-xl flex flex-col'>
         <div className='px-5 py-4 flex items-center justify-between'>
           <h3 className='font-bold'>Cart</h3>
           <button onClick={toggleOpenCart}>
