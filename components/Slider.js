@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import product from 'data/product'
 import useSlider from 'hooks/useSlider'
-import useAutoplay from 'hooks/useAutoplay'
 import { NextIcon, PrevIcon, XIcon } from './Icons'
 import { useEffect } from 'react'
 import useToggle from 'hooks/useToggle'
@@ -9,13 +8,6 @@ import useToggle from 'hooks/useToggle'
 export default function Slider() {
   const [lightbox, toggleLightbox] = useToggle()
 
-  // enable slider autoplay
-  const autoplay = useAutoplay({
-    delay: 6000,
-    stopOnInteraction: true,
-  })
-
-  // prettier-ignore
   const [viewportRef, slider, { imageIndex, setImageIndex }] = useSlider({ 
     loop: true, 
     skipSnaps: false
