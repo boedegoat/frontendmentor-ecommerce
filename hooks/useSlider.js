@@ -6,18 +6,14 @@ import { useEffect, useState } from 'react'
 
 export default function useSlider(options = undefined, plugins = undefined) {
   const [viewportRef, slider] = useEmblaCarousel(options, plugins)
+  const [imageIndex, setImageIndex] = useState(0)
 
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false)
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false)
 
-  function scroll(direction) {
-    if (!slider) return
-    if (direction === 'prev') slider.scrollPrev()
-    if (direction === 'next') slider.scrollNext()
-  }
-
   function onSelect() {
     if (!slider) return
+    setImageIndex(slider.selectedScrollSnap())
     setPrevBtnEnabled(slider.canScrollPrev())
     setNextBtnEnabled(slider.canScrollNext())
   }
@@ -27,6 +23,11 @@ export default function useSlider(options = undefined, plugins = undefined) {
     slider.on('select', onSelect)
     onSelect()
   }, [slider, onSelect])
+  
+  useEffect(() => {
+    if (!slider) return
+    slider.scrollTo(imageIndex)
+  }, [imageIndex])
 
-  return [viewportRef, scroll, { slider, prevBtnEnabled, nextBtnEnabled }]
+  return [viewportRef, slider, { prevBtnEnabled, nextBtnEnabled, imageIndex, setImageIndex }]
 }
